@@ -56,32 +56,32 @@
             <li>
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
-                    <span>主页</span>
+                    <span>HOME</span>
                 </a>
             </li>
             <li>
                 <a href="/tags">
                     <i class="iconfont icon-biaoqian1"></i>
-                    <span>标签</span>
+                    <span>TAGS</span>
                 </a>
             </li>
             <li>
-                <a href="/archives">
+                <a href="/archive">
                     <i class="iconfont icon-guidang2"></i>
-                    <span>存档</span>
+                    <span>ARCHIVES</span>
                 </a>
             </li>
             <li>
                 <a href="/about/">
                     <i class="iconfont icon-guanyu2"></i>
-                    <span>关于</span>
+                    <span>ABOUT</span>
                 </a>
             </li>
             
             <li>
                 <a id="search">
                     <i class="iconfont icon-sousuo1"></i>
-                    <span>搜索</span>
+                    <span>SEARCH</span>
                 </a>
             </li>
             
@@ -100,7 +100,7 @@
         <div class="search-input">
             <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
             <input id="search-input">
-            <span id="begin-search">搜索</span>
+            <span id="begin-search">search</span>
         </div>
         <div class="search-result-container" id="search-result-container">
 
@@ -123,16 +123,16 @@
     </div>
 
     <div class="post-meta">
-        <span class="attr">发布于：<span>2017-08-27 17:37:22</span></span>
+        <span class="attr">Post：<span>2017-08-27 17:37:22</span></span>
         
-        <span class="attr">标签：/
+        <span class="attr">Tags：/
         
         <a class="tag" href="/tags/#性能优化" title="性能优化">性能优化</a>
         <span>/</span>
         
         
         </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
 </span>
 
     </div>
@@ -219,7 +219,7 @@
 <li>如果页面几乎没有分层，页面变化时候需要重绘的区域较多。元素内容无变化只有位置发生变化的时候，可以利用分层来避免重绘。</li>
 </ul>
 <p>那么，是什么原因可以导致分层呢？目前每一个浏览器或者不同版本的浏览器分层策略都是有些不同的(虽然总体差不太多)，但最常见的几个分层原因是：transform、Z-index；还有可以使用硬件加速的video、canvas；fixed元素；混合插件(flash等)。关于其他更具体的内容，可以见下文。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//注:Chrome中符合创建新层的情况：</span><br><span class="line">Layer has 3D or perspective transform CSS properties(有3D元素的属性)</span><br><span class="line">Layer is used by &lt;video&gt; element using accelerated video decoding(video标签并使用加速视频解码)</span><br><span class="line">Layer is used by a &lt;canvas&gt; element with a 3D context or accelerated 2D context(canvas元素并启用3D)</span><br><span class="line">Layer is used for a composited plugin(插件，比如flash)</span><br><span class="line">Layer uses a CSS animation for its opacity or uses an animated webkit transform(CSS动画)</span><br><span class="line">Layer uses accelerated CSS filters(CSS滤镜)</span><br><span class="line">Layer with a composited descendant has information that needs to be in the composited layer tree, such as a clip or reflection(有一个后代元素是独立的layer)</span><br><span class="line">Layer has a sibling with a lower z-index which has a compositing layer (in other words the layer is rendered on top of a composited layer)(元素的相邻元素是独立layer)</span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//注:Chrome中符合创建新层的情况：</span><br><span class="line">Layer has <span class="number">3</span>D <span class="keyword">or</span> perspective transform CSS properties(有<span class="number">3</span>D元素的属性)</span><br><span class="line">Layer is used <span class="keyword">by</span> &lt;video&gt; <span class="keyword">element</span> <span class="keyword">using</span> accelerated video decoding(video标签并使用加速视频解码)</span><br><span class="line">Layer is used <span class="keyword">by</span> <span class="keyword">a</span> &lt;canvas&gt; <span class="keyword">element</span> <span class="keyword">with</span> <span class="keyword">a</span> <span class="number">3</span>D context <span class="keyword">or</span> accelerated <span class="number">2</span>D context(canvas元素并启用<span class="number">3</span>D)</span><br><span class="line">Layer is used <span class="keyword">for</span> <span class="keyword">a</span> composited plugin(插件，比如flash)</span><br><span class="line">Layer uses <span class="keyword">a</span> CSS animation <span class="keyword">for</span> its opacity <span class="keyword">or</span> uses <span class="keyword">an</span> animated webkit transform(CSS动画)</span><br><span class="line">Layer uses accelerated CSS filters(CSS滤镜)</span><br><span class="line">Layer <span class="keyword">with</span> <span class="keyword">a</span> composited descendant has information that needs <span class="built_in">to</span> be <span class="keyword">in</span> <span class="keyword">the</span> composited layer tree, such <span class="keyword">as</span> <span class="keyword">a</span> clip <span class="keyword">or</span> reflection(有一个后代元素是独立的layer)</span><br><span class="line">Layer has <span class="keyword">a</span> sibling <span class="keyword">with</span> <span class="keyword">a</span> <span class="built_in">lower</span> z-index which has <span class="keyword">a</span> compositing layer (<span class="keyword">in</span> other <span class="keyword">words</span> <span class="keyword">the</span> layer is rendered <span class="keyword">on</span> <span class="title">top</span> <span class="title">of</span> <span class="title">a</span> <span class="title">composited</span> <span class="title">layer</span>)(元素的相邻元素是独立<span class="title">layer</span>)</span><br></pre></td></tr></table></figure>
 <p>最后，我们总结一下如何合理的设计分层：分层总的原则是，减少渲染重绘面积与减少分层个数和分层总面积：</p>
 <ul>
 <li>相对位置会发生变化的元素需要分层(比如banner图、滚动条)</li>
@@ -299,7 +299,7 @@
         
             <div class="donate-container">
     <div class="donate-button">
-        <button id="donate-button">赞赏</button>
+        <button id="donate-button">donate</button>
     </div>
     <div class="donate-img-container hide" id="donate-img-container">
         <img id="donate-img" src="" data-src="/img/admire.jpg">
