@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-  <html class="light page-post">
+  <html class="light page-github">
 
 
 <head><meta name="generator" content="Hexo 3.8.0">
@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Gink&#39;s Blog">
 <meta property="og:description" content="控件架构Android 每个控件都会在界面中占据一块矩形区域，而在 Android 中，控件大致被分为两类 —— ViewGroup 和 View。 ViewGroup 是 View 的父控件。 View 的测量Android 在绘制 View 前，必须对 View 进行测量，即让系统知道要绘制一个多大的 View。 这个过程在 onMeasure() 中执行。 执行 View 测量的类是 ——">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-20T14:04:45.894Z">
+<meta property="og:updated_time" content="2018-12-20T14:14:15.624Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《群英传》读书记 —— Android 控件">
 <meta name="twitter:description" content="控件架构Android 每个控件都会在界面中占据一块矩形区域，而在 Android 中，控件大致被分为两类 —— ViewGroup 和 View。 ViewGroup 是 View 的父控件。 View 的测量Android 在绘制 View 前，必须对 View 进行测量，即让系统知道要绘制一个多大的 View。 这个过程在 onMeasure() 中执行。 执行 View 测量的类是 ——">
@@ -155,13 +155,13 @@ ga('send', 'pageview');
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#控件架构"><span class="toc-text">控件架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#View-的测量"><span class="toc-text">View 的测量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#View-的绘制"><span class="toc-text">View 的绘制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ViewGroup-的绘制"><span class="toc-text">ViewGroup 的绘制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ViewGroup-的绘制-1"><span class="toc-text">ViewGroup 的绘制</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#控件架构"><span class="toc-text">控件架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#View-的测量"><span class="toc-text">View 的测量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#View-的绘制"><span class="toc-text">View 的绘制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ViewGroup-的绘制"><span class="toc-text">ViewGroup 的绘制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ViewGroup-的绘制-1"><span class="toc-text">ViewGroup 的绘制</span></a></li></ol>
   </div>
 
 
 
 <div class="content content-post CENTER">
-   <article id="post-《群英传》读书记 —— Android 控件" class="article article-type-post" itemprop="blogPost">
+   <article id="github-《群英传》读书记 —— Android 控件" class="article article-type-github" itemprop="blogPost">
   <header class="article-header">
     <h1 class="post-title">《群英传》读书记 —— Android 控件</h1>
 
@@ -201,9 +201,9 @@ ga('send', 'pageview');
 
   <div class="article-content">
     
-      <h3 id="控件架构"><a href="#控件架构" class="headerlink" title="控件架构"></a>控件架构</h3><p>Android 每个控件都会在界面中占据一块矩形区域，而在 Android 中，控件大致被分为两类 —— ViewGroup 和 View。</p>
+      <h2 id="控件架构"><a href="#控件架构" class="headerlink" title="控件架构"></a>控件架构</h2><p>Android 每个控件都会在界面中占据一块矩形区域，而在 Android 中，控件大致被分为两类 —— ViewGroup 和 View。</p>
 <p>ViewGroup 是 View 的父控件。</p>
-<h3 id="View-的测量"><a href="#View-的测量" class="headerlink" title="View 的测量"></a>View 的测量</h3><p>Android 在绘制 View 前，必须对 View 进行测量，即让系统知道要绘制一个多大的 View。</p>
+<h2 id="View-的测量"><a href="#View-的测量" class="headerlink" title="View 的测量"></a>View 的测量</h2><p>Android 在绘制 View 前，必须对 View 进行测量，即让系统知道要绘制一个多大的 View。</p>
 <p>这个过程在 onMeasure() 中执行。</p>
 <p>执行 View 测量的类是 —— Measure 类，测量模式分为以下三种：</p>
 <ul>
@@ -212,12 +212,12 @@ ga('send', 'pageview');
 <li><strong>UNSPECIFIDE</strong>：不指定 View 大小进行测量，View 想多大就多大，通常在绘制自定义 View 时使用。</li>
 </ul>
 <p>View 类默认的 onMeasure() 方法只支持 EXACTLY 模式。</p>
-<h3 id="View-的绘制"><a href="#View-的绘制" class="headerlink" title="View 的绘制"></a>View 的绘制</h3><p>绘制 View 要重写 onDraw() 方法，并使用系统提供的绘制 2D View 的 Canvas 对象。</p>
+<h2 id="View-的绘制"><a href="#View-的绘制" class="headerlink" title="View 的绘制"></a>View 的绘制</h2><p>绘制 View 要重写 onDraw() 方法，并使用系统提供的绘制 2D View 的 Canvas 对象。</p>
 <p>创建 Canvas 对象时要传入一个 bitmap 参数，使之与创建的 Canvas 画布紧密联系在一起，这一步称为“装载画布”。</p>
 <p>这个 bitmap 存储所有在 Canvas 上绘制的像素信息。</p>
-<h3 id="ViewGroup-的绘制"><a href="#ViewGroup-的绘制" class="headerlink" title="ViewGroup 的绘制"></a>ViewGroup 的绘制</h3><p>ViewGroup 会管理其子 View，其中就会管理其子 View 的大小。</p>
+<h2 id="ViewGroup-的绘制"><a href="#ViewGroup-的绘制" class="headerlink" title="ViewGroup 的绘制"></a>ViewGroup 的绘制</h2><p>ViewGroup 会管理其子 View，其中就会管理其子 View 的大小。</p>
 <p>ViewGroup 在测量时会通过遍历所有子 View，从而调用子 View 的 Measure 方法来获取每个子 View 的测量结果。</p>
-<h3 id="ViewGroup-的绘制-1"><a href="#ViewGroup-的绘制-1" class="headerlink" title="ViewGroup 的绘制"></a>ViewGroup 的绘制</h3><p>ViewGroup 不需要绘制，但是 ViewGroup 会使用 dispatchDraw() 方法来绘制其子 View，其过程是通过遍历所有子 View，并调用子 View 的绘制方法完成绘制工作。</p>
+<h2 id="ViewGroup-的绘制-1"><a href="#ViewGroup-的绘制-1" class="headerlink" title="ViewGroup 的绘制"></a>ViewGroup 的绘制</h2><p>ViewGroup 不需要绘制，但是 ViewGroup 会使用 dispatchDraw() 方法来绘制其子 View，其过程是通过遍历所有子 View，并调用子 View 的绘制方法完成绘制工作。</p>
 
     
   </div>
@@ -327,7 +327,7 @@ ga('send', 'pageview');
 
 
   
-      <div class="fexo-comments comments-post">
+      <div class="fexo-comments comments-github">
     
 
     
